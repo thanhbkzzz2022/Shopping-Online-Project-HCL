@@ -42,6 +42,22 @@ input[type = "text"], input[type = "date"] {
     border: 2px solid #c82333;
 }
 
+.error {
+    background: #ff3333;
+    text-align: center;
+    width: 337px;
+    height: 20px;
+    padding: 2px;
+    border: 0;
+    border-radius: 5px;
+    margin: 10px auto 10px;
+    position: absolute;
+    top: 21%;
+    left: 41%;
+    color: white;
+    display: none;
+}
+
 .des {
     display: inline-block;
     width: 200px;

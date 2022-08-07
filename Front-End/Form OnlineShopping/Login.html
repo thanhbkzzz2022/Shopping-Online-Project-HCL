@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <script src="./js/login.js"></script>
 </head>
 <body>
     <body id="particles-js"></body>
@@ -13,21 +14,21 @@
             <div class="container">
                 <img src="img/logo.png" alt="image" id="logo">
                 <span class="error animated tada" id="msg"></span>
-                <form name="form1" class="box" action="AddItem.html">
+                <form name="form1" class="box" id="form" action="AddItem.html">
                 <h1>LOGIN</span></h1>
                 <h5>Sign in to your account.</h5>
-                    <input type="text" name="Username" placeholder="Username" autocomplete="off">
+                    <input type="text" name="Username" placeholder="Username" id="username" autocomplete="off" onblur="checkInput()">
                     <i class="typcn typcn-eye" id="eye"></i>
-                    <input type="password" name="password" placeholder="Passsword" id="pwd" autocomplete="off">
+                    <input type="password" name="password" placeholder="Passsword" id="pwd" autocomplete="off" onblur="checkPwd()">
                     <label>
                     <input type="checkbox" checked="checked">
                     <small class="rmb">Remember me</small>
                     </label>
                     <a href="ForgotPassword.html" class="forgetpass">Forget Password?</a>
-                    <input type="submit" value="Sign in" class="btn1">
+                    <input type="submit" value="Sign in" class="btn1" id="btn" onclick="validate()">
                 </form>
-                    <a href="Signup.html" class="dnthave">Don’t have an account? Sign up</a>
-            </div> 
+                    <a href="Signup.html" class="dnthave">Don't have an account? Sign up</a>
+            </div>
         </div>
     </body>
 </html>

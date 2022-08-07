@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Item</title>
     <link rel="stylesheet" href="css/additem.css">
+    <script src="js/additem.js"></script>
 </head>
 <body>
     <h1>ADD PRODUCTS</h1>
@@ -13,21 +14,22 @@
     <div id="wrap">
         <div id="container">
             <img src="img/logo.png" alt="image" id="logo">
+            <span class="error animated tada" id="msg"></span>
             <form action="">
                 <label for="productName" class="des">
                     <strong>Enter product name</strong>
                 </label>
-                <input type="text" name="productName" placeholder="Enter Product Name" autocomplete="off">
+                <input type="text" name="productName" id="name" placeholder="Enter Product Name" autocomplete="off" onblur="checkPN()">
                 <br>
                 <label for="productName" class="des">
                     <strong>Enter product price</strong>
                 </label>
-                <input type="text" name="productPrice" placeholder="Enter Product Price" autocomplete="off">
+                <input type="text" name="productPrice" id="price" placeholder="Enter Product Price" autocomplete="off" onblur="checkPP()">
                 <br>
                 <label for="productName" class="des">
                     <strong>Enter number product</strong>
                 </label>
-                <input type="text" name="productPrice" placeholder="Enter Number Product" autocomplete="off">
+                <input type="text" name="numberProduct" id="number" placeholder="Enter Number Product" autocomplete="off" onblur="checkNP()">
                 <br>
                 <label for="category" class="des">
                     <strong>Choose a category</strong>
@@ -89,18 +91,18 @@
                     </option>
                 </select>
                 <br>
-                <label for="releaseDate" class="des">
+                <label for="releaseDate" class="des" >
                     <strong>Choose release date</strong>
                 </label>
-                <input type="date" name="releaseDate">
+                <input type="date" name="releaseDate" id="date" onblur="checkRD()">
                 <br>
                 <strong><p>Description</p></strong>
-                <textarea name="describe" id="description" cols="50" rows="10">
+                <textarea name="describe" id="description" cols="50" rows="10" onblur="checkDes()">
                 </textarea>
 
                 <div id="button-center">
-                    <input type="submit" value="Add" class="btn1">
-                    <input type="submit" value="Reset" class="btn1">
+                    <input type="submit" value="Add" class="btn1" onclick="validate()">
+                    <input type="reset" value="Reset" class="btn1">
                 </div>
                 
             </form>

@@ -6,36 +6,199 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="css/signup.css">
+    <script type="text/javascript">
+        validate = () => {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("pwd").value;
+            var repwd = document.getElementById("repwd").value;
+            var fullname = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phonenumber").value;
+            var address = document.getElementById("address").value;
+            var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var regexPhone = /^\d+$/;
+            
+            if (username.trim().length == 0 && password.trim().length == 0 && repwd.trim().length == 0 && fullname.trim().length == 0 && email.trim().length == 0 && phone.trim().length == 0 && address.trim().length == 0) {
+                event.preventDefault();
+                document.getElementById("username").style.border = '2px solid red';
+                document.getElementById("pwd").style.border = '2px solid red';
+                document.getElementById("repwd").style.border = '2px solid red';
+                document.getElementById("fullname").style.border = '2px solid red';
+                document.getElementById("email").style.border = '2px solid red';
+                document.getElementById("phonenumber").style.border = '2px solid red';
+                document.getElementById("address").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please do not leave fields blank!';
+            }
+            
+            else if(username.trim().length == 0) {
+                event.preventDefault();
+                document.getElementById("username").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please enter your username!';
+            }
+            
+            else if (password.trim().length == 0) {
+                event.preventDefault();
+                document.getElementById("pwd").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please enter your password!';
+            }
+        
+            else if(repwd.trim().length == 0) {
+                event.preventDefault();
+                document.getElementById("repwd").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please re-enter password!';
+            }
+            
+            else if (fullname.trim().length == 0) {
+                event.preventDefault();
+                document.getElementById("fullname").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please enter your fullname!';
+            }
+        
+            else if(email.trim().length == 0) {
+                event.preventDefault();
+                document.getElementById("email").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please enter your email!';
+            }
+            
+            else if (phone.trim().length == 0) {
+                event.preventDefault();
+                document.getElementById("phone").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please enter your phone number!';
+            }
+        
+            else if(address.trim().length == 0) {
+                event.preventDefault();
+                document.getElementById("address").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please enter your address!';
+            }
+        
+            else if (!email.match(regex)){
+                event.preventDefault();
+                document.getElementById("address").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please enter correct email format!';
+            }
+        
+            else if(!phone.match(regexPhone)){
+                event.preventDefault();
+                document.getElementById("address").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please enter number only!';
+            }
+        
+            else if(password.trim().length < 6) {
+                event.preventDefault();
+                document.getElementById("pwd").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Please enter at least 7 characters';
+            }
+        
+            else if(password != repwd) {
+                event.preventDefault();
+                document.getElementById("repwd").style.border = '2px solid red';
+                document.getElementById("msg").style.display = 'block';
+                document.getElementById("msg").innerHTML = 'Password does not match';
+            }
+        
+            else {
+                alert("Signed up successfully");
+            }
+        
+        }
+        
+        checkInput = () => {
+            var username = document.getElementById("username").value;
+            
+            if(username.trim().length != 0) {
+                document.getElementById("username").style.border = '1px solid black';
+            }
+        }
+        
+        checkPwd= () => {
+            var password = document.getElementById("pwd").value;
+        
+            if(password.trim().length != 0) {
+                document.getElementById("pwd").style.border = '1px solid black';
+            }
+        }
+        
+        checkRePwd = () => {
+            var username = document.getElementById("repwd").value;
+            
+            if(username.trim().length != 0) {
+                document.getElementById("repwd").style.border = '1px solid black';
+            }
+        }
+        
+        checkFullname= () => {
+            var password = document.getElementById("fullname").value;
+        
+            if(password.trim().length != 0) {
+                document.getElementById("fullname").style.border = '1px solid black';
+            }
+        }
+        
+        checkEmail = () => {
+            var username = document.getElementById("email").value;
+            
+            if(username.trim().length != 0) {
+                document.getElementById("email").style.border = '1px solid black';
+            }
+        }
+        
+        checkPhone = () => {
+            var password = document.getElementById("phonenumber").value;
+        
+            if(password.trim().length != 0) {
+                document.getElementById("phonenumber").style.border = '1px solid black';
+            }
+        }
+        
+        checkAddress = () => {
+            var username = document.getElementById("address").value;
+            
+            if(username.trim().length != 0) {
+                document.getElementById("address").style.border = '1px solid black';
+            }
+        }        
+    </script>
 </head>
 <body>
-    <body id="particles-js"></body>
         <div class="animated bounceInDown">
             <div class="container">
                 <img src="img/logo.png" alt="image" id="logo">
-                <span class="error animated tada" id="msg"></span>
-                <form name="form1" class="box">
+                <span class="error" id="msg"></span>
+                <form name="form1" class="box" action="./Login.html">
                 <h1>SIGN UP</span></h1>
                 <h5>Create new account</h5>
-                    <label for="Username" class="des"></span><strong>Enter Username: </strong></label><input type="text" name="Username" placeholder="Username" autocomplete="off">
+                    <label for="Username" class="des"></span><strong>Enter Username: </strong></label><input type="text" id="username" name="Username" placeholder="Username" onblur="checkInput()">
                     <i class="typcn typcn-eye" id="eye"></i>
                     <br>
-                    <label for="password" class="des"><strong>Enter your password: </strong></label><input type="password" name="password" placeholder="Passsword" id="pwd" autocomplete="off">
+                    <label for="password" class="des"><strong>Enter your password: </strong></label><input type="password" name="password" id="pwd" placeholder="Passsword" onblur="checkPwd()">
                     <br>
-                    <label for="re-enter-password" class="des"><strong>Re-Enter your password: </strong></label><input type="password" name="re-enter-password" placeholder="Re-enter Passsword" id="pwd" autocomplete="off">
+                    <label for="re-enter-password" class="des"><strong>Re-Enter your password: </strong></label><input type="password" id="repwd" name="reenterpassword" placeholder="Re-enter Passsword" onblur="checkRePwd()">
                     <br>
-                    <label for="Fullname" class="des"><strong>Enter Full Name: </strong></label><input type="text" name="Fullname" placeholder="Full Name" autocomplete="off">
+                    <label for="Fullname" class="des"><strong>Enter Full Name: </strong></label><input type="text" name="Fullname" id="fullname" placeholder="Full Name" onblur="checkFullname()">
                     <br>
-                    <label for="Email" class="des"><strong>Enter your email address: </strong></label><input type="email" name="Email" placeholder="Your Email Address" autocomplete="off">
+                    <label for="Email" class="des"><strong>Enter your email address: </strong></label><input type="email" name="Email" id="email" placeholder="Your Email Address" onblur="checkEmail()">
                     <br>
-                    <label for="PhoneNumber" class="des"><strong>Enter your phone number: </strong></label><input type="text" name="PhoneNumber" placeholder="Your Phone Number" autocomplete="off">
+                    <label for="PhoneNumber" class="des"><strong>Enter your phone number: </strong></label><input type="text" id="phonenumber" name="PhoneNumber" placeholder="Your Phone Number" onblur="checkPhone()">
                     <br>
-                    <label for="Address" class="des"><strong>Enter your address: </strong></label><input type="text" name="Address" placeholder="Your Adress" autocomplete="off">
+                    <label for="Address" class="des"><strong>Enter your address: </strong></label><input type="text" id="address" name="Address" placeholder="Your Adress" onblur="checkAddress()">
                     <br>
                     <div id="capcha-code">
 
                     </div>
                     <div id="button-center">
-                        <input type="submit" value="Sign up" class="btn1">
+                        <input type="submit" value="Sign up" class="btn1" onclick="validate()">
                     </div>
                     
                 </form>
@@ -43,4 +206,5 @@
             </div> 
         </div>
     </body>
+    
 </html>

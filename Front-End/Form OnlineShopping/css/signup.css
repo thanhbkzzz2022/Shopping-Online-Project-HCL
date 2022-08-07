@@ -176,7 +176,7 @@ label span {
 }
 
 .error {
-  background: #ff3333;
+  color: #ff3333;
   text-align: center;
   width: 337px;
   height: 20px;
@@ -185,9 +185,8 @@ label span {
   border-radius: 5px;
   margin: 10px auto 10px;
   position: absolute;
-  top: 31%;
-  left: 7.2%;
-  color: white;
+  top: 22%;
+  left: 27%;
   display: none;
 }
 
