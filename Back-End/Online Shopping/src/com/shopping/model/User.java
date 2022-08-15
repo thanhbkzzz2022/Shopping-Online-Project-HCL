@@ -1,14 +1,35 @@
 package com.shopping.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class User {
+	@Id
+	@Column
 	private Long id;
+	@Column
 	private String username;
+	@Column
 	private String password;
+	@Column
 	private String fullName;
+	@Column
 	private String email;
+	@Column
 	private String phoneNumber;
+	@Column
 	private String address;
+	@Column
 	private Integer type;
+	
+	public User() {
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}
